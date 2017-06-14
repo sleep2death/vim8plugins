@@ -31,3 +31,6 @@
 [submodule "pack/plugins/start/delimitMate"]
 	path = pack/plugins/start/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule "pack/plugins/start/editorconfig-vim"]
+	path = pack/plugins/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git

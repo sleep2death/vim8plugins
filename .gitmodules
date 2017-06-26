@@ -34,3 +34,6 @@
 [submodule "pack/plugins/start/editorconfig-vim"]
 	path = pack/plugins/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "pack/plugins/start/vim-monokai"]
+	path = pack/plugins/start/vim-monokai
+	url = https://github.com/sickill/vim-monokai.git

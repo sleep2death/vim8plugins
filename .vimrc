@@ -27,6 +27,9 @@ augroup reload_vimrc " {
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
+inoremap zz <Esc>
+nnoremap zz <Esc>
+vnoremap zz <Esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -35,7 +38,7 @@ augroup END " }
 set so=7
 
 " Avoid garbled characters in Chinese language windows OS
-let $LANG='en' 
+let $LANG='en'
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
@@ -72,23 +75,23 @@ endif
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set lazyredraw
 
 " For regular expressions turn magic on
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -107,7 +110,7 @@ set foldcolumn=1
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
-syntax enable 
+syntax enable
 
 "set background=dark
 
@@ -205,7 +208,7 @@ nnoremap <leader>ba :BufOnly %<cr>
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
   set stal=2
@@ -295,7 +298,7 @@ function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
     unmenu Foo
-endfunction 
+endfunction
 
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
@@ -382,7 +385,7 @@ let g:ctrlp_working_path_mode = 'rw'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip    " Linux/MacOSX
 "let g:ctrlp_mruf_exclude = '/bower_components/.*\|/node_modules/.*' " MacOSX/Linux
 
-"let g:ctrlp_user_command = 'find %s -type f' 
+"let g:ctrlp_user_command = 'find %s -type f'
 
 "airline
 " enable/disable enhanced tabline. >
@@ -457,14 +460,6 @@ let g:tagbar_autoclose = 1
 
 "
 let g:tabular_loaded = 1
-
-"syntastic
-let g:syntastic_go_checkers=['gofmt']
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute ", "is not recognized!", "discarding unexpected"]
-let g:syntastic_javascript_standard_generic = 1
-let g:syntastic_javascript_standard_exec = 'standard'
-let g:syntastic_javascript_standard_args = '--reporter=compact'
-let g:syntastic_javascript_checkers = ['standard']
 
 "esformatter
 nnoremap <silent> <leader>ff :Esformatter<CR>
@@ -557,8 +552,15 @@ endif
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
+let g:ale_fixers = {
+\ 'javascript': ['standard'],
+\}
+
+au BufRead,BufNewFile *.wpy setlocal filetype=vue
+autocmd FileType vue syntax sync fromstart
+
 " cygwin cursor block fix
-let &t_ti.="\e[1 q"
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[1 q"
-let &t_te.="\e[0 q"
+" let &t_ti.="\e[1 q"
+" let &t_SI.="\e[5 q"
+" let &t_EI.="\e[1 q"
+" let &t_te.="\e[0 q"

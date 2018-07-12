@@ -49,3 +49,9 @@
 [submodule "pack/plugins/start/caw.vim"]
 	path = pack/plugins/start/caw.vim
 	url = https://github.com/tyru/caw.vim.git
+[submodule "pack/plugins/start/context_filetype.vim"]
+	path = pack/plugins/start/context_filetype.vim
+	url = https://github.com/Shougo/context_filetype.vim.git
+[submodule "pack/plugins/start/far.vim"]
+	path = pack/plugins/start/far.vim
+	url = https://github.com/brooth/far.vim.git

@@ -55,3 +55,6 @@
 [submodule "pack/plugins/start/far.vim"]
 	path = pack/plugins/start/far.vim
 	url = https://github.com/brooth/far.vim.git
+[submodule "/home/aspirin2d/.vim/pack/plugins/start/vim-go"]
+	path = /home/aspirin2d/.vim/pack/plugins/start/vim-go
+	url = https://github.com/fatih/vim-go.git
